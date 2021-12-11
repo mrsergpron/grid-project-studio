@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@import "reset";
+@import "ie9";
+@import "variables";
+@import "fonts";
+@import "mixins";
+@import "core";
+@import "animations";
+
+@import "blocks/header";
+@import "blocks/footer";
+@import "blocks/socials";
+@import "blocks/menu";
+@import "blocks/projects.scss";
+@import "blocks/like";
+@import "blocks/links";
+@import "blocks/studio";
+@import "blocks/news";

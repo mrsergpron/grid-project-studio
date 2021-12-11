@@ -1,0 +1,415 @@
+.projects {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+
+  &__description {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #a0a19c;
+
+    b {
+      color: #333;
+    }
+    @media (min-width: 1500px) {
+      @include dynamicText(75%, 24, 12, 1500px, 3000, 1500);
+    }
+  }
+  &__description--lowerCase {
+    text-transform: lowercase;
+  }
+  &__like {
+    width: 50px;
+    margin: 0 auto;
+  }
+  &__counts {
+    color: red;
+  }
+
+  &__elements--one {
+    position: relative;
+    grid-column: span 5;
+    grid-row: span 2;
+    background-color: $project-one;
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><line x1="0" y1="100%" x2="100%" y2="0" stroke="rgb(255,255,255)" stroke-width="1"/></svg>');
+    }
+  }
+  &__links {
+    position: absolute;
+    display: inline-block;
+    margin-top: 30%;
+    margin-left: 29%;
+    margin-bottom: 13%;
+
+    @media (min-width: 1500px) {
+      @include dynamicText(110%, 26, 13, 1500px, 3000, 1500);
+    }
+  }
+
+  &__link {
+    font-family: "roboto_condensedregular", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fefefe;
+    padding-left: 30px;
+
+    z-index: 1;
+    transition-duration: 500ms;
+    transition-property: color;
+    transition-timing-function: linear;
+
+    &:hover {
+      color: #000;
+      background: url("../img/arrow.svg") left center no-repeat;
+    }
+  }
+  &__title {
+    position: absolute;
+    display: inline-block;
+    font-family: "roboto_condensedregular", sans-serif;
+    font-size: 48px;
+    font-weight: 300;
+    line-height: 50px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #fefefe;
+    margin-top: 75%;
+    margin-left: 40%;
+    margin-right: 0%;
+    margin-bottom: 35%;
+
+    @media (min-width: 1500px) {
+      @include dynamicText(300%, 96, 48, 1500px, 3000, 1500);
+    }
+  }
+
+  &__name {
+    font-family: "roboto_condensedregular", sans-serif;
+    font-size: 24px;
+    font-weight: 300;
+    line-height: 24px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333;
+    margin-bottom: 3%;
+
+    @media (min-width: 1500px) {
+      @include dynamicText(150%, 48, 24, 1500px, 3000, 1500);
+    }
+  }
+
+  &__elements--two {
+    position: relative;
+    grid-column: span 6;
+    grid-row: span 2;
+    background: url("/img/image2.png") no-repeat center right $project-two;
+    background-size: cover;
+  }
+
+  &__info--two {
+    position: absolute;
+    margin-top: 18%;
+    margin-left: 11%;
+    margin-bottom: 13%;
+  }
+  &__counter {
+    margin-top: 17%;
+    margin-left: 22%;
+    width: 200px;
+  }
+
+  &__btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: block;
+    margin: 0 auto;
+
+    svg {
+      width: 30px;
+      height: 30px;
+      transition-duration: 1000ms;
+      transition-property: fill;
+    }
+    &:hover {
+      svg {
+        fill: $red;
+      }
+    }
+
+    &__counts {
+      display: block;
+      color: $red;
+      text-align: center;
+    }
+  }
+
+  &__counter--two {
+    position: absolute;
+    margin-top: 45%;
+    margin-left: 11%;
+    margin-bottom: 13%;
+  }
+
+  &__view {
+    font-family: "roboto_condensedregular", sans-serif;
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #333;
+    text-decoration: none;
+    display: inline-block;
+    background: url("/img/arrow-view.svg") no-repeat left center;
+    padding-left: 30px;
+    margin-bottom: 100px;
+
+    margin-bottom: 100px span {
+      border-bottom: 1px solid transparent;
+      transition-duration: 500ms;
+      transition-property: border-bottom;
+      transition-timing-function: linear;
+    }
+
+    &:hover {
+      span {
+        border-bottom: 1px solid #333;
+      }
+    }
+  }
+
+  &__elements--three {
+    position: relative;
+    grid-column: span 5;
+    grid-row: span 1;
+    background: url("/img/image3.png") no-repeat center right $project-three;
+    background-size: 100%;
+  }
+
+  &__info--three {
+    position: absolute;
+    width: 230px;
+    margin-top: 9%;
+    margin-left: 10%;
+    margin-bottom: 4%;
+  }
+
+  &__counter--three {
+    margin-top: 33%;
+    margin-left: 11%;
+    margin-bottom: 4%;
+  }
+  &__name--three {
+    margin-bottom: 3%;
+  }
+  &__view--three {
+    margin-bottom: 30%;
+  }
+  &__elements--four {
+    position: relative;
+    grid-column: span 5;
+    grid-row: span 2;
+    background: url("/img/image4.png") no-repeat center top $project-four;
+    background-size: 70%;
+  }
+  &__info--four {
+    position: absolute;
+    width: 250px;
+    margin-top: 73%;
+    margin-left: 13%;
+    margin-bottom: 10%;
+  }
+  &__counter--four {
+    position: relative;
+    margin-top: 81%;
+    margin-left: 50%;
+    margin-bottom: 11.7%;
+  }
+
+  &__description--four {
+    font-size: 14px;
+  }
+  &__view--four {
+    font-size: 14px;
+  }
+  &__like--four {
+    width: 50px;
+    margin-top: -60%;
+    margin-left: 80%;
+  }
+  &__elements--five {
+    position: relative;
+    grid-column: span 3;
+    grid-row: span 2;
+    background: url("/img/image5.png") no-repeat right bottom $project-five;
+    background-size: 100%;
+  }
+
+  &__info--five {
+    position: absolute;
+    width: 250px;
+    margin-top: 13.3%;
+    margin-left: 10%;
+    margin-bottom: 11.7%;
+  }
+
+  &__description--five {
+    color: #ced3d6;
+  }
+
+  &__counter--five {
+    margin-top: 53%;
+    margin-left: 10%;
+    margin-bottom: 11.7%;
+  }
+  &__view--five {
+    color: #ced3d6;
+  }
+  &__counts--five {
+    color: red;
+  }
+  &__btn--five {
+    svg {
+      fill: $white;
+    }
+  }
+
+  &__elements--six {
+    position: relative;
+    grid-column: span 8;
+    grid-row: span 2;
+    background: url("/img/image6.png") no-repeat left center $project-six;
+    background-size: 100%;
+  }
+  &__info--six {
+    position: absolute;
+    margin-top: 14%;
+    margin-left: 48%;
+    margin-bottom: 39%;
+  }
+
+  &__counter--six {
+    position: absolute;
+    margin-top: 14%;
+    margin-left: 77%;
+  }
+  &__like--six {
+    margin-top: -30%;
+  }
+
+  &__elements--seven {
+    position: relative;
+    grid-column: span 5;
+    grid-row: span 1;
+    background: url("/img/image7.png") no-repeat left center $project-seven;
+    background-size: 100%;
+  }
+
+  &__info--seven {
+    position: absolute;
+    margin-top: 10%;
+    margin-left: 47%;
+    margin-bottom: 5%;
+  }
+
+  &__counter--seven {
+    margin-top: 40%;
+    margin-left: 46%;
+    margin-bottom: 10%;
+  }
+  &__like--seven {
+    margin-top: -30%;
+  }
+
+  &__elements--eight {
+    position: relative;
+    grid-column: span 8;
+    grid-row: span 1;
+    background: url("/img/image8.png") no-repeat left center $project-eight;
+    background-size: 100%;
+  }
+  &__info--eight {
+    position: absolute;
+    margin-top: 40%;
+    margin-left: 20%;
+  }
+
+  &__counter--eight {
+    margin-top: 43%;
+    margin-left: 50%;
+    margin-bottom: 3%;
+  }
+  &__like--eight {
+    position: relative;
+    margin-top: -60%;
+    margin-left: 111%;
+  }
+
+  &__elements--nine {
+    position: relative;
+    grid-column: span 3;
+    grid-row: span 1;
+    background: url("/img/image9.png") no-repeat left center $project-nine;
+    background-size: 100%;
+  }
+
+  &__info--nine {
+    position: absolute;
+    margin-top: 15%;
+    margin-left: 35%;
+  }
+
+  &__counter--nine {
+    margin-top: 94%;
+    margin-left: 35%;
+  }
+  &__like--nine {
+    position: relative;
+    margin-top: -27%;
+    margin-left: 30%;
+  }
+
+  &__elements--ten {
+    position: relative;
+    grid-column: span 5;
+    grid-row: span 1;
+    background-color: $project-ten;
+
+    &::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      width: 58%;
+      height: 100%;
+      background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><line x1="0" y1="100%" x2="100%" y2="0" stroke="rgb(255,255,255)" stroke-width="1"/></svg>');
+    }
+  }
+  &__info--ten {
+    position: absolute;
+    margin-top: 13%;
+    margin-left: 15%;
+  }
+  &__subtitle {
+    display: inline-block;
+    text-transform: uppercase;
+    margin-left: 60%;
+  }
+}

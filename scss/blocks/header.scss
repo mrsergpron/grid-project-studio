@@ -1,0 +1,134 @@
+.header {
+	display: grid;
+	grid-template-columns: repeat(16, 1fr);
+
+	&__left {
+		grid-column: span 11;
+		padding-left: 15.9%;
+		padding-top: 4.8%;
+		padding-bottom: 8.7%;
+		background: url('../img/image1.png') no-repeat 100% center;
+		background-size: 100%;
+
+		@media (min-resolution: 2dppx), (min-width: 1500px) {
+			background: url('../img/image1-2x.png');
+		}
+	}
+	&__right {
+		grid-column: span 5;
+		background-color: $second;
+		position: relative;
+		padding-top: 10.7%;
+
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+			background-image: url('data:image/svg+xml;utf8, <svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><line x1="0" y1="100%" x2="100%" y2="0" stroke="rgb(255,255,255)" stroke-width="1"/></svg>');
+		}
+	}
+	&__logo {
+		display: block;
+		max-width: 100%;
+	}
+	&__slogan {
+		color: $colorText;
+		font-size: 18px;
+		line-height: 1;
+		text-transform: uppercase;
+		margin-top: 20px;
+
+		@media (min-width: 1500px) {
+			@include dynamicText(112.5%, 36, 18, 1500px, 3000, 1500);
+		}
+	}
+	&__socials {
+		margin-top: 60px;
+		margin-left: 15px;
+		margin-bottom: 15px;
+	}
+	&__address {
+		font-size: 13px;
+		text-transform: uppercase;
+		color: $white;
+		line-height: 1.2;
+		position: absolute;
+		left: 12.9%;
+		bottom: 36.5%;
+
+		@media (min-width: 1500px) {
+			@include dynamicText(81.25%, 26, 13, 1500px, 3000, 1500);
+		}
+	}
+	&__contacts {
+		font-size: 13px;
+		text-transform: uppercase;
+		color: $white;
+		line-height: 1.2;
+		position: absolute;
+		left: 29%;
+		bottom: 20%;
+
+		@media (min-width: 1500px) {
+			@include dynamicText(81.25%, 26, 13, 1500px, 3000, 1500);
+		}
+	}
+	&__tel {
+		text-decoration: none;
+		color: $white;
+
+		&:hover {
+			color: $active-text-color;
+		}
+	}
+	&__mail {
+		text-decoration: none;
+		color: $white;
+		&:hover {
+			color: $active-text-color;
+		}
+	}
+}
+@media (max-width: 992px) {
+	.header {
+		&__left {
+			grid-column: span 9;
+		}
+
+		&__right {
+			grid-column: span 7;
+		}
+	}
+}
+@media (max-width: 567px) {
+	.header {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+
+		&__left {
+			grid-column: span 1;
+			grid-row: 2/3;
+		}
+
+		&__right {
+			grid-column: span 1;
+			grid-row: 1/2;
+		}
+		&__address {
+			position: static;
+			margin-left: 10%;
+			margin-top: 10%;
+		}
+		&__contacts {
+			position: static;
+			margin-left: 35%;
+			margin-top: 20%;
+			margin-bottom: 20%;
+		}
+	}
+}
